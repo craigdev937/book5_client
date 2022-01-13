@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { BookAPI } from "../global/BookAPI";
 import { Item } from "./Item";
 
@@ -7,11 +8,11 @@ export const List = (): JSX.Element => {
 
     return (
         <React.Fragment>
-            <h1>List</h1>
+            <button>
+                <Link to="/books/add">New Book</Link>
+            </button>
             {data?.map((book) => (
-                <main key={book._id}>
-                    <h1>{book.title}</h1>
-                </main>
+                <Item key={book._id} book={book} />
             ))}
         </React.Fragment>
     );

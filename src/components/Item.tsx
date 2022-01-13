@@ -1,10 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { IBook } from "../models/Interfaces";
 
-export const Item = (): JSX.Element => {
+type Props = {
+    book: IBook
+};
+
+export const Item = ({book}: Props): JSX.Element => {
     return (
         <React.Fragment>
-            <h1>Item</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quasi omnis! A dolore facere illo enim tempora molestias atque corporis impedit pariatur amet? Totam ipsa reprehenderit debitis consequuntur modi facere!</p>
+            <h2><Link 
+                to={`/books/edit/${book._id}`}
+                    >{book.title}
+                </Link>
+            </h2>
+            <main key={book._id}>
+                <p>{book.first} {book.last}</p>
+                <p>Age: {book.age}</p>
+                <p>Info: {book.info}</p>
+            </main>
         </React.Fragment>
     );
 };
