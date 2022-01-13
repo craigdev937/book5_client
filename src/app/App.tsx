@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
+import { Main } from "../pages/Main";
 
 export const App = (): JSX.Element => {
     return (
         <React.Fragment>
-            <h1>App</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quasi omnis! A dolore facere illo enim tempora molestias atque corporis impedit pariatur amet? Totam ipsa reprehenderit debitis consequuntur modi facere!</p>
+            <Main />
         </React.Fragment>
     );
 };
