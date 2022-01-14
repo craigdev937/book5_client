@@ -33,11 +33,13 @@ export const BookAPI = createApi({
             invalidatesTags: [{ type: "Books", id: "LIST" }],
         }),
         update: builder.mutation<IBook, IBook>({
-            query: ({_id, ...book}) => ({
-                url: `/${_id}`,
-                method: "PUT",
-                body: book,
-            }),
+            query: (_id, ...book) => {
+                return {
+                    url: `/${_id}`,
+                    method: "PUT",
+                    body: book,
+                }
+            },
             invalidatesTags: [{ type: "Books", id: "LIST" }],
         }),
         delete: builder.mutation<IBook, string>({

@@ -65,7 +65,7 @@ export const Edit = (): JSX.Element => {
                     <label htmlFor="title">Title</label>
                     <input 
                         type="text" 
-                        name="text"
+                        name="title"
                         placeholder="Title"
                         value={book.title}
                         onChange={handleChange}
