@@ -87,10 +87,10 @@ export const Add = (): JSX.Element => {
                     <button type="submit"
                         >{updating ? "Adding..." : "Add Book"}
                     </button>
+                    {saved && (
+                        <section>Book added, redirecting...</section>
+                    )}
                 </footer>
-                {saved && (
-                    <section>Book added, redirecting...</section>
-                )}
             </form>
         </React.Fragment>
     );
